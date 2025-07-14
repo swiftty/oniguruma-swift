@@ -8,19 +8,24 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "oniguruma-swift",
-            targets: ["oniguruma-swift"]
+            name: "COniguruma",
+            targets: ["COniguruma"]
         ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "oniguruma-swift"
-        ),
-        .testTarget(
-            name: "oniguruma-swiftTests",
-            dependencies: ["oniguruma-swift"]
+            name: "COniguruma",
+            exclude: [
+                "src/unicode_egcb_data.c",
+                "src/unicode_wb_data.c",
+                "src/unicode_property_data.c",
+                "src/unicode_fold_data.c",
+            ],
+            cSettings: [
+                .headerSearchPath("src")
+            ]
         ),
     ]
 )
