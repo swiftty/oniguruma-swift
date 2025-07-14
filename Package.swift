@@ -27,5 +27,11 @@ let package = Package(
                 .headerSearchPath("src")
             ]
         ),
+        .testTarget(
+            name: "COnigurumaTests",
+            dependencies: [
+                "COniguruma"
+            ]
+        )
     ]
 )
