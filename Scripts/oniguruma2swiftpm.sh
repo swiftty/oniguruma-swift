@@ -12,7 +12,7 @@ pushd "$SOURCE_DIR/.."
 ./configure
 popd
 
-EXCLUDE_FILE_PREFIXES=("test" "onigposix" "regposix" "regposerr" "unicode_property_data_posix")
+EXCLUDE_FILE_PREFIXES=("test" "onigposix" "regposix" "regposerr" "unicode_property_data_posix" "mktable")
 EXCLUDE_DIR_NAMES=()
 
 should_exclude() {
